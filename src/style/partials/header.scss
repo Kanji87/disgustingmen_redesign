@@ -1,3 +1,40 @@
 /*---
 header.scss
 ---*/
+
+.header {
+  text-align: center;
+  padding: 10px 0 0;
+}
+
+.logo {
+  margin-bottom: 30px;
+
+  span {
+    font-size: 1.2em;
+  }
+}
+
+.menu {
+  background-color: $black;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    box-sizing: border-box;
+    text-transform: uppercase;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+  }
+}

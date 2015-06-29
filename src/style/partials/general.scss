@@ -55,8 +55,9 @@ body {
   background-image: url($imgPath + 'wood_1.png');
   background-repeat: repeat;
   background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
   color: $black;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4;
@@ -67,7 +68,7 @@ body {
   }
 
   @include respond-to(tablet) {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   @include respond-to(fablet) {
@@ -80,35 +81,51 @@ body {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.5em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 h3 {
-  font-size: 1.8em;
+  font-size: 2em;
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul, ol {
   margin: 0;
   padding: 0;
+}
+
+a {
+  -webkit-transition: all ease-in-out .3s;
+  -moz-transition: all ease-in-out .3s;
+  -ms-transition: all ease-in-out .3s;
+  -o-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
 }
 
 img {
   width: 100%;
 }
 
+.logo-font {
+  font-family: "Cinzel", sans-serif;
+}
+
+.condensed-font {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .container {
-  width: 980px;
+  width: 1040px;
   position: relative;
-  padding: 20px 30px;
-  min-height: 500px;
+  padding: 20px;
+  min-height: 300px;
   margin: 0 auto;
   background-image: url($imgPath + 'handmadepaper.png');
 
@@ -119,10 +136,5 @@ img {
 }
 
 .black-border {
-  position: absolute;
-  width: 98%;
-  height: 96%;
-  top: 2%;
-  left: 1%;
   border: 1px solid $deep-grey;
 }

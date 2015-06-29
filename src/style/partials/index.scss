@@ -1,0 +1,134 @@
+.content {
+  min-height: 300px;
+  padding: 15px;
+}
+
+.top-grid {
+  margin-bottom: 40px;
+}
+
+.top-grid__item {
+  height: 300px;
+  padding: 0;
+
+  &:hover {
+    .top-grid__image {
+      -webkit-filter: grayscale(0%);
+      -moz-filter: grayscale(0%);
+      -ms-filter: grayscale(0%);
+      -o-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+}
+
+.top-grid__image-block {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 110px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(255, 255, 255, .0), rgba(255, 255, 255, .9));
+  }
+}
+
+.top-grid__image {
+  width: 100%;
+  height: auto;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all ease-in-out .3s;
+  -moz-transition: all ease-in-out .3s;
+  -ms-transition: all ease-in-out .3s;
+  -o-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
+  //  filter: url($imgPath + "grayscale.svg");
+  //  filter: gray;
+}
+
+.top-grid__image-caption {
+  width: 100%;
+  padding: 10px 15px;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  color: $black;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0 0 10px $white;
+  text-transform: uppercase;
+}
+
+.top-grid__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.hot {
+  margin-bottom: 15px;
+
+  &:before {
+    content: 'дичайшее: ';
+    text-transform: uppercase;
+  }
+}
+
+.hot__link {
+  color: $black;
+  text-decoration: underline;
+
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.cool__title {
+  display: inline-block;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: $white;
+  background-color: $black;
+}
+
+.cool-grid {
+  padding: 10px;
+  background-color: $black;
+}
+
+.cool-grid__item {
+  height: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.cool-grid__image-block {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cool-grid__image {
+  width: 100%;
+  height: auto;
+}
+
+.cool-grid__link {
+  @extend .top-grid__link;
+}
