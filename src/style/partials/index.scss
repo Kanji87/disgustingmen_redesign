@@ -8,8 +8,14 @@
 }
 
 .top-grid__item {
-  height: 300px;
+  height: 250px;
   padding: 0;
+  padding-right: 5px;
+  margin-bottom: 5px;
+
+  &:last-child {
+    padding-right: 0;
+  }
 
   &:hover {
     .top-grid__image {
@@ -20,12 +26,35 @@
       filter: grayscale(0%);
     }
   }
+
+  @include respond-to(tablet) {
+    height: 220px;
+
+    .top-grid__image {
+      -webkit-filter: grayscale(0%);
+      -moz-filter: grayscale(0%);
+      -ms-filter: grayscale(0%);
+      -o-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+
+  @include respond-to(fablet) {
+    padding: 0;
+    height: 250px;
+    margin-bottom: 10px;
+  }
+
+  @include respond-to(phone) {
+    height: 200px;
+  }
 }
 
 .top-grid__image-block {
   position: relative;
-  height: 300px;
+  height: 250px;
   overflow: hidden;
+  border: 1px solid $deep-grey;
 
   &:after {
     content: "";
@@ -35,6 +64,22 @@
     bottom: 0;
     left: 0;
     background: linear-gradient(rgba(255, 255, 255, .0), rgba(255, 255, 255, .9));
+  }
+
+  @include respond-to(tablet) {
+    height: 220px;
+  }
+
+  @include respond-to(fablet) {
+    height: 250px;
+  }
+
+  @include respond-to(phone) {
+    height: 200px;
+    
+    &:after {
+      background: 0;
+    }
   }
 }
 
@@ -68,6 +113,11 @@
   font-weight: bold;
   text-shadow: 0 0 10px $white;
   text-transform: uppercase;
+  
+  @include respond-to(phone) {
+    text-shadow: none;
+    background-color: $light-grey;
+  }
 }
 
 .top-grid__link {
@@ -117,13 +167,19 @@
 }
 
 .cool-grid__item {
-  height: 250px;
   padding: 10px;
   margin-bottom: 20px;
+
+  @include respond-to(fablet) {
+    margin-bottom: 10px;
+  }
+
+  @include respond-to(phone) {
+    margin-bottom: 0;
+  }
 }
 
 .cool-grid__image-block {
-  height: 250px;
   position: relative;
   overflow: hidden;
 }
@@ -139,15 +195,16 @@
 
 .cool-grid__image-caption {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   color: $white;
   padding: 10px 20px;
   line-height: 1.2;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 100;
   background-color: $black;
+
+  @include respond-to(phone) {
+    padding: 10px 0;
+  }
 }
 
 .last-news {
@@ -163,6 +220,10 @@
   vertical-align: top;
   margin-bottom: 30px;
   float: none;
+
+  @include respond-to(phone) {
+    margin-bottom: 20px;
+  }
 }
 
 .last-news__item-title {
@@ -176,12 +237,59 @@
   height: 200px;
   overflow: hidden;
   margin-bottom: 15px;
-}
 
-.last-news__image-block {
-  margin-bottom: 10px;
+  @include respond-to(fablet) {
+    height: 300px;
+  }
+
+  @include respond-to(phone) {
+    height: 200px;
+    margin-bottom: 10px;
+  }
 }
 
 .last-news__item-lead {
   line-height: 1.2;
+}
+
+.up-button {
+  width: 60px;
+  height: 70px;
+  display: block;
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  background-color: $white;
+  background-image: url($imgPath + 'up_icon.png');
+  -webkit-background-size: 80%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center 5px;
+  border: 1px solid $black;
+  -webkit-transition: all easy-in-out 1s;
+  -moz-transition: all easy-in-out 1s;
+  -ms-transition: all easy-in-out 1s;
+  -o-transition: all easy-in-out 1s;
+  transition: all easy-in-out 1s;
+  z-index: 999;
+
+  &:after {
+    content: 'наверх';
+    position: absolute;
+    display: block;
+    color: $black;
+    width: 100%;
+    text-align: center;
+    font-size: .7em;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include respond-to(tablet) {
+    display: none;
+  }
+}
+
+.up-button--hidden {
+  bottom: -300px;
 }

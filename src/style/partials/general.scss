@@ -4,19 +4,16 @@ general.scss
 
 // Variables
 $phone: 320px;
-$fablet: 480px;
+$fablet: 580px;
 $tablet: 768px;
-$desktop: 992px;
-$large: 1300px;
+$desktop: 980px;
+$large: 1080px;
 
 // Colors
 $black: #333333;
 $deep-grey: #666;
+$light-grey: #f0f0f0;
 $white: #ffffff;
-$yellow: #fdc244;
-$orange: #f69322;
-$green: #b9d777;
-$red: #ef4e34;
 
 // Image paths
 $imgPath: "../img/";
@@ -40,7 +37,7 @@ $imgPath: "../img/";
       @content;
     }
   } @else if $media == large {
-    @media only screen and (min-width: $large) {
+    @media only screen and (max-width: $large) {
       @content;
     }
   }
@@ -69,6 +66,7 @@ body {
 
   @include respond-to(tablet) {
     font-size: 16px;
+    padding: 0;
   }
 
   @include respond-to(fablet) {
@@ -132,6 +130,15 @@ img {
   @media (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi) {
     background-image: url($imgPath + 'handmadepaper_@2X.png');
+  }
+
+  @include respond-to(desktop) {
+    width: 960px;
+  }
+
+  @include respond-to(tablet) {
+    width: 100%;
+    padding: 40px 20px;
   }
 }
 
