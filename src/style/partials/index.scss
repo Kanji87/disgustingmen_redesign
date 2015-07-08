@@ -63,7 +63,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(255, 255, 255, .0), rgba(255, 255, 255, .9));
+    background: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .9));
   }
 
   @include respond-to(tablet) {
@@ -108,10 +108,10 @@
   left: 0;
   bottom: 0;
   z-index: 10;
-  color: $black;
+  color: $white;
   font-size: 1.2em;
   font-weight: bold;
-  text-shadow: 0 0 10px $white;
+  text-shadow: 0 0 10px $black;
   text-transform: uppercase;
   
   @include respond-to(phone) {
