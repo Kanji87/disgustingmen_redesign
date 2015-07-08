@@ -116,7 +116,7 @@
   
   @include respond-to(phone) {
     text-shadow: none;
-    background-color: $light-grey;
+    background-color: $black;
   }
 }
 

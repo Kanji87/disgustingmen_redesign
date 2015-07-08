@@ -10,6 +10,12 @@ header.scss
 .logo {
   margin-bottom: 30px;
 
+  h1 {
+    @include respond-to(phone) {
+      font-size: 2em;
+    }
+  }
+
   span {
     font-size: 1.2em;
   }
